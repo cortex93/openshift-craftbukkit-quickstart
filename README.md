@@ -4,32 +4,22 @@ openshift-craftbukkit-quickstart
 A quickstart Minecraft (Craftbukkit) server that will automatically download latest craftbukkit development build 
 and start it.
 
-Create the Openshift DIY Application
+Create the Openshift Craftbukkit Application from command line
 ===
 
-1. Create a DIY application using this git repo as source code:
+1. Create an application using this git repo as cartridge url:
 
    ```bash
-   $ rhc app-create craftbukkit diy --from-code=git://github.com/jyeary/openshift-craftbukkit-quickstart.git
+   $ rhc app-create craftbukkit http://cartreflect-claytondev.rhcloud.com/github/cortex93/openshift-craftbukkit-quickstart --no-git
    ```
 
-2. Create a port-forward from your local machine to your remote server:
+2. When application creation is done, you should see a message like
 
-
-   ```bash
-   $ rhc port-forward craftbukkit
-   Checking available ports ... done
-   Forwarding ports ...
-
-   To connect to a service running on OpenShift, use the Local address
-
-   Service Local                OpenShift
-   ------- --------------- ---- ---------
-   java    127.0.0.1:25565  =>  *:25565
-
-   Press CTRL-C to terminate port forwarding
    ```
-3. The server will be accessible from `minecraft` using **Direct Connect** on 127.0.0.1:25565  
+   Connect to <your-domain>:38096
+   ```
+
+4. Launch your minecraft client and direct connect to the given url
 
 
 Setting Administrative Player (Op)
